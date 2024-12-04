@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Ace's Aerial Studios{% endblock %}
+{% block content %}
+<h1>Experience the World from Above</h1>
+<p>
+    Stunning aerial photography and videography that brings your vision to life. 
+    Our expert drone services capture breathtaking moments like never before.
+</p>
+<a href="{{ url_for('portfolio') }}" class="btn">View Portfolio</a>
+
+<div class="gallery">
+    <img src="{{ url_for('static', filename='images/photo1.jpg') }}" alt="Drone Photo 1">
+    <img src="{{ url_for('static', filename='images/photo2.jpg') }}" alt="Drone Photo 2">
+    <img src="{{ url_for('static', filename='images/photo3.jpg') }}" alt="Drone Photo 3">
+</div>
+{% endblock %}

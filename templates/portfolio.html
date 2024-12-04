@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Portfolio{% endblock %}
+{% block content %}
+<h1>Our Portfolio</h1>
+<p>Explore our best drone photography work.</p>
+
+<!-- Slideshow Container -->
+<div class="slideshow-container">
+    <div class="slide fade">
+        <img src="{{ url_for('static', filename='images/Tulsa.jpg') }}" alt="Tulsa">
+        <div class="caption">Stunning Beach View</div>
+    </div>
+    <div class="slide fade">
+        <img src="{{ url_for('static', filename='images/drone2.jpg') }}" alt="The Woods">
+        <div class="caption">Urban Skylines</div>
+    </div>
+    <div class="slide fade">
+        <img src="{{ url_for('static', filename='images/portfolio3.jpg') }}" alt="Portfolio Image 3">
+        <div class="caption">Beautiful Mountain Peaks</div>
+    </div>
+
+    <!-- Next/Prev Controls -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<!-- Thumbnail Gallery -->
+<div class="thumbnail-gallery">
+    <img src="{{ url_for('static', filename='images/Tulsa.jpg') }}" alt="Thumbnail 1" onclick="currentSlide(1)">
+    <img src="{{ url_for('static', filename='images/drone2.jpg') }}" alt="Thumbnail 2" onclick="currentSlide(2)">
+    <img src="{{ url_for('static', filename='images/portfolio3.jpg') }}" alt="Thumbnail 3" onclick="currentSlide(3)">
+</div>
+
+{% endblock %}
