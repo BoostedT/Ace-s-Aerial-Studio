@@ -112,15 +112,24 @@ footer {
     position: relative;
 }
 
-.slide img {
-    width: 100%; /* The image will take up the full width of its container */
-    height: auto; /* Maintain the aspect ratio */
-    max-width: 100%; /* Prevent images from exceeding container width */
-    object-fit: cover; 
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+@media (max-width: 768px) {
+    .slide img {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .thumbnail-gallery img {
+        width: 25%; /* Larger thumbnails for smaller screens */
+    }
 }
 
+@media (max-width: 480px) {
+    .slide img {
+        width: 100%; /* Ensure it still fills the container */
+    }
+
+    .thumbnail-gallery img {
+        width: 30%; /* Adjust thumbnail size further for very small screens */
+    }
 }
 
 .caption {

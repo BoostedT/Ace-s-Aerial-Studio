@@ -21,9 +21,18 @@ def contact():
         name = request.form['name']
         email = request.form['email']
         message = request.form['message']
-        # Simulate sending an email
-        flash("Thank you for reaching out! We'll get back to you shortly.")
-        return redirect(url_for('contact'))
+
+        # Save form data to submissions.txt
+        try:
+            with open("submissions.txt", "a") as f:
+                f.write(f"Name: {name}\nEmail: {email}\nMessage: {message}\n{'-'*40}\n")
+            flash("Thank you for your message! We'll get back to you soon.")
+        except Exception as e:
+            flash("An error occurred while saving your message. Please try again later.")
+            print(f"Error writing to file: {e}")
+
+        return redirect('/contact')
+
     return render_template('contact.html')
 
 if __name__ == '__main__':
