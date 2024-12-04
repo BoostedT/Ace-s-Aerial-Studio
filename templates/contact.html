@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 {% block title %}Contact{% endblock %}
 {% block content %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="flash-messages">
+            {% for category, message in messages %}
+                <div class="alert {{ category }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}
 <h1>Contact Us</h1>
 <form method="post">
     <label for="name">Name:</label>

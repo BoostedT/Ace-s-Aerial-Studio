@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 
 app = Flask(__name__)
 app.secret_key = "123"
@@ -22,18 +22,54 @@ def contact():
         email = request.form['email']
         message = request.form['message']
 
-        # Save form data to submissions.txt
+        # Save to submissions.txt
         try:
             with open("submissions.txt", "a") as f:
                 f.write(f"Name: {name}\nEmail: {email}\nMessage: {message}\n{'-'*40}\n")
-            flash("Thank you for your message! We'll get back to you soon.")
+            flash("Thank you for your message! We'll get back to you soon.", "success")
         except Exception as e:
-            flash("An error occurred while saving your message. Please try again later.")
+            flash("An error occurred while saving your message. Please try again.", "error")
             print(f"Error writing to file: {e}")
 
         return redirect('/contact')
 
     return render_template('contact.html')
+
+USERNAME = "admin"
+PASSWORD = "password123"
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        if username == USERNAME and password == PASSWORD:
+            session['logged_in'] = True
+            flash("Successfully logged in!", "success")
+            return redirect('/submissions')
+        else:
+            flash("Invalid credentials. Please try again.", "error")
+    return render_template('login.html')
+
+@app.route('/logout')
+def logout():
+    session.pop('logged_in', None)
+    flash("You have been logged out.", "success")
+    return redirect('/login')
+
+@app.route('/submissions')
+def submissions():
+    if not session.get('logged_in'):
+        flash("Please log in to view this page.", "error")
+        return redirect('/login')
+
+    try:
+        with open("submissions.txt", "r") as f:
+            data = f.readlines()
+    except FileNotFoundError:
+        data = ["No submissions found."]
+    
+    return render_template('submissions.html', data=data)
 
 if __name__ == '__main__':
     app.run(debug=True)
