@@ -98,7 +98,7 @@ footer {
 }
 button {
   font-family: Montserrat-Regular;
-  background-color: #007bff;
+  background-color: #019217;
   color: white;
   border-radius: 5px;
   padding: 7px;
@@ -307,7 +307,6 @@ nav ul li.login-button a {
     text-decoration: none;
     font-size: 0.9rem;
 }
-
 nav ul li.login-button a:hover {
     background-color: #0056b3;
 }
@@ -317,10 +316,18 @@ pre {
   line-height: 10px;
 }
 
-.name {
-  
-}
-
 .contact {
   margin-right: 10px;
+}
+
+p {
+  margin: 0;
+}
+
+.create {
+  background-color: #019217;
+}
+
+.view {
+  background-color: rgb(199, 206, 0);
 }
