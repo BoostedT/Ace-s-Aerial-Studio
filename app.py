@@ -39,7 +39,7 @@ def contact():
 
     return render_template('contact.html')
 
-@app.route('/new-submissions', methods=['GET', 'POST'])
+@app.route('/new-submission', methods=['GET', 'POST'])
 def new_submission():
     if request.method == 'POST':
         name = request.form['name']
@@ -57,6 +57,10 @@ def new_submission():
         return redirect('/submissions')
     
     return render_template('new-submissions.html')
+
+@app.route('/pending', methods=['GET', 'POST'])
+def pending_submission():
+    return render_template('pending_submissions.html')
 
 USERNAME = "admin"
 PASSWORD = "password123"
