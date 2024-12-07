@@ -96,6 +96,12 @@ footer {
     margin-top: 20px;
     transition: background-color 0.3s, transform 0.2s;
 }
+button {
+  font-family: Montserrat-Regular;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+}
 .btn:hover {
     background: #009acd;
     transform: scale(1.1);
