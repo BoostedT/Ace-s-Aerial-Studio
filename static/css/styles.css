@@ -101,6 +101,7 @@ button {
   background-color: #007bff;
   color: white;
   border-radius: 5px;
+  padding: 7px;
 }
 .btn:hover {
     background: #009acd;
