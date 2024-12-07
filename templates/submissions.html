@@ -2,6 +2,9 @@
 {% block title %}Submissions{% endblock %}
 {% block content %}
 <h1>Submissions</h1>
+<div>
+  <button>New submission</button>
+</div>
 <a href="{{ url_for('logout') }}">Logout</a>
 <pre>
 {% for line in data %}
