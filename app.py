@@ -39,6 +39,7 @@ def contact():
 
     return render_template('contact.html')
 
+@app.route('/new-submissions', methods=['GET', 'POST'])
 @app.route('/new-submission', methods=['GET', 'POST'])
 def new_submission():
     if request.method == 'POST':
@@ -55,9 +56,12 @@ def new_submission():
             print("Error submitting request: {}".format(e))
 
         return redirect('/submissions')
-    
+
     return render_template('new-submissions.html')
 
+@app.route('/pending', methods=['GET', 'POST'])
+def pending_submission():
+    return render_template('pending_submissions.html')
 USERNAME = "admin"
 PASSWORD = "password123"
 
@@ -69,7 +73,7 @@ def login():
         if username == USERNAME and password == PASSWORD:
             session['logged_in'] = True
             flash("Successfully logged in!", "success")
-            return redirect('/pending')
+            return redirect('/submissions')
         else:
             flash("Invalid credentials. Please try again.", "error")
     return render_template('login.html')
@@ -91,9 +95,8 @@ def submissions():
             data = f.readlines()
     except FileNotFoundError:
         data = ["No submissions found."]
-    
+
     return render_template('submissions.html', data=data)
 
 if __name__ == '__main__':
     app.run(debug=True)
-
