@@ -2,14 +2,16 @@
 {% block title %}Submissions{% endblock %}
 {% block content %}
 <h1>New Submission</h1>
-<h3>To make a new submission, click below.</h3>
-<div>
-  <button>New submission</button>
-</div>
-<div>
-  <h2>Pending</h2>
-
-</div>
+<h3>Please complete the following fields below.</h3>
+<form method="post">
+  <label for="name">Name / Business:</label>
+  <input type="text" id="name" name="name" required>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+  <label for="message">Description:</label>
+  <textarea id="message" name="message" required></textarea>
+  <button type="submit">Send</button>
+</form>
 <pre>
 {% for line in data %}
 {{ line }}

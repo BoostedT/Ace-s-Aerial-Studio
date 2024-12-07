@@ -15,9 +15,9 @@ def portfolio():
 def about():
     return render_template('about.html')
 
-@app.route('/new_submission')
-def submission():
-    return render_template('new-submission.html')
+@app.route('/new-submissions')
+def new_submissions():
+    return render_template('new-submissions.html')
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
@@ -32,12 +32,31 @@ def contact():
                 f.write(f"Name: {name}\nEmail: {email}\nMessage: {message}\n{'-'*40}\n")
             flash("Thank you for your message! We'll get back to you soon.", "success")
         except Exception as e:
-            flash("An error occurred while saving your message. Please try again.", "error")
+            flash("An error occurred while saving your message. Please try again later.", "error")
             print(f"Error writing to file: {e}")
 
         return redirect('/contact')
 
     return render_template('contact.html')
+
+@app.route('/new-submissions', methods=['GET', 'POST'])
+def new_submission():
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        message = request.form['message']
+
+        try:
+            with open("submissions.txt", "a") as f:
+                f.write(f"Name: {name}\nEmail: {email}\nMessage: {message}\n{'-'*40}\n")
+            flash("Thank you for your submission! We'll get back to you soon.", "success")
+        except Exception as e:
+            flash("An error occured when making your submission. Please try again later", "error")
+            print("Error submitting request: {}".format(e))
+
+        return redirect('/submissions')
+    
+    return render_template('new-submissions.html')
 
 USERNAME = "admin"
 PASSWORD = "password123"

@@ -5,4 +5,3 @@ Message: I'm interested in your services!
 Name: Mike Wazowski
 Email: mike.wazowski@gmail.com
 Message: What is your availability for this upcoming month?
-----------------------------------------
