@@ -58,10 +58,6 @@ def new_submission():
     
     return render_template('new-submissions.html')
 
-@app.route('/pending', methods=['GET', 'POST'])
-def pending_submission():
-    return render_template('pending_submissions.html')
-
 USERNAME = "admin"
 PASSWORD = "password123"
 
@@ -73,7 +69,7 @@ def login():
         if username == USERNAME and password == PASSWORD:
             session['logged_in'] = True
             flash("Successfully logged in!", "success")
-            return redirect('/submissions')
+            return redirect('/pending')
         else:
             flash("Invalid credentials. Please try again.", "error")
     return render_template('login.html')
