@@ -1,7 +1,12 @@
 Name: John Doe
 Email: john.doe@gmail.com
-Message: I'm interested in your services!
+Message: I'm interested in your services! What equpiment do you use?
 ----------------------------------------
 Name: Mike Wazowski
 Email: mike.wazowski@gmail.com
 Message: What is your availability for this upcoming month?
+----------------------------------------
+Name: Homer Simpson
+Email: homer.simpson@gmail.com
+Message: Interested in shooting a wedding. What is your standard rate?
+----------------------------------------

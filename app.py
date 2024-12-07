@@ -15,10 +15,6 @@ def portfolio():
 def about():
     return render_template('about.html')
 
-@app.route('/new-submissions')
-def new_submissions():
-    return render_template('new-submissions.html')
-
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     if request.method == 'POST':
@@ -39,7 +35,6 @@ def contact():
 
     return render_template('contact.html')
 
-@app.route('/new-submissions', methods=['GET', 'POST'])
 @app.route('/new-submission', methods=['GET', 'POST'])
 def new_submission():
     if request.method == 'POST':
