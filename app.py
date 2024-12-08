@@ -57,6 +57,7 @@ def new_submission():
 @app.route('/pending', methods=['GET', 'POST'])
 def pending_submission():
     return render_template('pending_submissions.html')
+
 USERNAME = "admin"
 PASSWORD = "password123"
 
@@ -92,6 +93,10 @@ def submissions():
         data = ["No submissions found."]
 
     return render_template('submissions.html', data=data)
+
+@app.route('/map')  # New route for the map
+def map():
+    return render_template('map.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

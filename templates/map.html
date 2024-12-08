@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Interactive Map{% endblock %}
+{% block content %}
+<div id="map" style="height: 400px;"></div>
+
+<script>
+    // Initialize the map
+    var map = L.map('map').setView([37.0902, -95.7129], 4); // Centered on the US
+
+    // Add the tile layer (you can choose different styles)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Sample photo data (replace with your actual data)
+    var photoData = [
+        {
+            "lat": 33.7490, 
+            "lng": -84.3880, 
+            "img": "{{ url_for('static', filename='images/Tulsa.jpg') }}",
+            "caption": "Downtown Tulsa, Oklahoma"
+        },
+        {
+            "lat": 40.7128, 
+            "lng": -74.0060, 
+            "img": "{{ url_for('static', filename='images/drone2.jpg') }}",
+            "caption": "Urban Skylines"
+        },
+        // Add more photo data here...
+    ];
+
+    // Add markers for each photo
+    photoData.forEach(function(photo) {
+        var marker = L.marker([photo.lat, photo.lng]).addTo(map);
+        marker.bindPopup('<img src="' + photo.img + '" width="200px"><br>' + photo.caption);
+    });
+</script>
+{% endblock %}
