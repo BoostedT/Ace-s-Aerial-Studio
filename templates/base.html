@@ -21,7 +21,9 @@
             <li><a href="{{ url_for('about') }}">About</a></li>
             <li><a href="{{ url_for('contact') }}">Contact</a></li>
             <li><a href="{{ url_for('submissions') }}">Submissions</a></li>
-            <li><a href="{{ url_for('map') }}">Map</a></li>  </ul>
+            <li><a href="{{ url_for('map') }}">Map</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+        </ul>
     </nav>
     <main>
         {% block content %}{% endblock %}

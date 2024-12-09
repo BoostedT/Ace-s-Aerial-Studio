@@ -15,8 +15,8 @@
     // Sample photo data (replace with your actual data)
     var photoData = [
         {
-            "lat": 33.7490, 
-            "lng": -84.3880, 
+            "lat": 36.1540,
+            "lng": -95.9928,
             "img": "{{ url_for('static', filename='images/Tulsa.jpg') }}",
             "caption": "Downtown Tulsa, Oklahoma"
         },
@@ -26,7 +26,12 @@
             "img": "{{ url_for('static', filename='images/drone2.jpg') }}",
             "caption": "Urban Skylines"
         },
-        // Add more photo data here...
+        {
+            "lat": 37.8199,
+            "lng": -122.4786,
+            "img": "{{ url_for('static', filename='images/california.jpg') }}",
+            "caption": "Golden Gate Bridge"
+        }
     ];
 
     // Add markers for each photo
