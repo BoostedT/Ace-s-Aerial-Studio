@@ -10,3 +10,7 @@ Name: Homer Simpson
 Email: homer.simpson@gmail.com
 Message: Interested in shooting a wedding. What is your standard rate?
 ----------------------------------------
+Name: Bugs Bunny
+Email: bugs.bunny@gmail.com
+Message: Interested in aerial shots over my business for my website.
+----------------------------------------
