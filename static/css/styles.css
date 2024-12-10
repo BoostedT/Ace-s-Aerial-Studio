@@ -304,3 +304,34 @@ pre {
 .submit {
   margin-top: 15px;
 }
+
+.facebook img {
+  width: 40px;
+  height: 40px;
+  top: 520px;
+  position: relative;
+}
+
+.instagram img {
+  width: 40px;
+  height: 30px;
+  top: 515px;
+  position: relative;
+}
+
+.tiktok img {
+  width: 25px;
+  height: 30px;
+  margin-bottom: 4px;
+  margin-left: 5px;
+  position: relative;
+  top: 518px;
+}
+
+.x img {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 515px;
+  margin-left: 8px;
+}
