@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block title %}Interactive Map{% endblock %}
 {% block content %}
+<h1>Interactive Map</h1>
+<h2>Below, some of the previous locations where our services have been provided.</h2>
 <div id="map" style="height: 400px;"></div>
-
 <script>
     // Initialize the map
     var map = L.map('map').setView([37.0902, -95.7129], 4); // Centered on the US
