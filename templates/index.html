@@ -11,10 +11,16 @@
 
 <div class="gallery">
     <div class="image-container">
-        <img src="{{ url_for('static', filename='images/oneokfield.jpg') }}" alt="Drillers Stadium">
-        <div class="overlay">Drillers Stadium</div>
+      <img src="{{ url_for('static', filename='images/oneokfield.jpg') }}" alt="Drillers Stadium">
+      <div class="overlay">Drillers Stadium</div>
     </div>
-    <img src="{{ url_for('static', filename='images/downtownwithsunset.jpg') }}" alt="Bok Center Dusk">
-    <img src="{{ url_for('static', filename='images/darktulsa.jpg') }}" alt="Downtown Tulsa at Night">
+    <div class="image-container">
+      <img src="{{ url_for('static', filename='images/downtownwithsunset.jpg') }}" alt="Bok Center Dusk">
+      <div class="overlay">BOK Center Dusk</div>
+    </div>
+    <div class="image-container">
+      <img src="{{ url_for('static', filename='images/darktulsa.jpg') }}" alt="Downtown Tulsa at Night">
+      <div class="overlay">Downtown Tulsa at Night</div>
+    </div>
 </div>
 {% endblock %}
