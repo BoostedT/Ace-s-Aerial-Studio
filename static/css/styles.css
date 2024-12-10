@@ -8,45 +8,20 @@ body {
     background-size: cover;
 }
 
-/* Navigation Bar */
-nav ul {
-    list-style: none;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-}
-nav ul li {
-    margin: 0 15px;
-}
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-nav ul li a:hover {
-    color: #00bfff;
-}
-
 /* Main Content */
 main {
     padding: 10px 10px;
     text-align: center;
-    background: rgba(0, 0, 0, 0.6);
     margin: 0px auto;
     max-width: 80%;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Headings and Paragraphs */
 h1 {
     font-size: 3rem;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
-}
+    text-shadow: -2px 5px 3px rgba(0, 0, 0, 1);}
 p {
     font-size: 1.2rem;
     line-height: 1.6;
@@ -265,34 +240,6 @@ form button:hover {
     color: #721c24;
     background-color: #f8d7da;
     border: 1px solid #f5c6cb;
-}
-
-/* Navigation Bar */
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #333;
-    padding: 10px 20px;
-    margin: 0;
-}
-
-nav ul li {
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 5px 10px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-nav ul li a:hover {
-    background-color: #575757;
-    border-radius: 5px;
 }
 
 /* Align login/logout button to the right */

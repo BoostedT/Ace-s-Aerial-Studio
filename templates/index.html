@@ -10,7 +10,10 @@
 <a href="{{ url_for('about') }}" class="btn">Learn More</a>
 
 <div class="gallery">
-    <img src="{{ url_for('static', filename='images/oneokfield.jpg') }}" alt="Drillers Stadium">
+    <div class="image-container">
+        <img src="{{ url_for('static', filename='images/oneokfield.jpg') }}" alt="Drillers Stadium">
+        <div class="overlay">Drillers Stadium</div>
+    </div>
     <img src="{{ url_for('static', filename='images/downtownwithsunset.jpg') }}" alt="Bok Center Dusk">
     <img src="{{ url_for('static', filename='images/darktulsa.jpg') }}" alt="Downtown Tulsa at Night">
 </div>

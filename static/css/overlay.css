@@ -1,0 +1,23 @@
+/* Overlay Styles for photos on main page */
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+.overlay {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 10px;
+    font-size: 1.4rem;
+    text-align: center;
+    opacity: 0%;
+    transition: opacity 0.3s ease;
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+}
