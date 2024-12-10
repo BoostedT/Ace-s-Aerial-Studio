@@ -98,5 +98,14 @@ def submissions():
 def map():
     return render_template('map.html')
 
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        flash("Successfully created account!", "success")
+        return redirect('submissions')
+    return render_template('signup.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
