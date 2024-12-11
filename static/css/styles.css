@@ -1,27 +1,59 @@
+/* styles.css */
+
 /* General styles */
 body {
     font-family: Montserrat-Regular, sans-serif;
     margin: 0;
     padding: 0;
     color: #fff;
-    background: url('../images/darkTulsa2.jpg') no-repeat center center fixed;
+    background-image: url("{{ url_for('static', filename='images/aces-studio-background.jpg') }}");
     background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Navigation Bar */
+nav ul {
+    list-style: none;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00bfff;
 }
 
 /* Main Content */
 main {
     padding: 10px 10px;
     text-align: center;
+    background: rgba(0, 0, 0, 0.6);
     margin: 0px auto;
     max-width: 80%;
     border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Headings and Paragraphs */
 h1 {
     font-size: 3rem;
     margin-bottom: 20px;
-    text-shadow: -2px 5px 3px rgba(0, 0, 0, 1);}
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
 p {
     font-size: 1.2rem;
     line-height: 1.6;
@@ -36,6 +68,7 @@ p {
     justify-content: center;
     gap: 20px;
 }
+
 .gallery img {
     width: 30%;
     height: auto;
@@ -44,6 +77,7 @@ p {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .gallery img:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
@@ -55,11 +89,11 @@ footer {
     background: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 0px;
-    top: 520px;
-    position: relative;
+    position: relative; /* Removed fixed 'top' property */
     bottom: 0;
     width: 100%;
 }
+
 /* Button Styles */
 .btn {
     display: inline-block;
@@ -72,17 +106,20 @@ footer {
     margin-top: 20px;
     transition: background-color 0.3s, transform 0.2s;
 }
+
 button {
-  font-family: Montserrat-Regular;
-  background-color: #019217;
-  color: white;
-  border-radius: 5px;
-  padding: 7px;
+    font-family: Montserrat-Regular;
+    background-color: #019217;
+    color: white;
+    border-radius: 5px;
+    padding: 7px;
 }
+
 .btn:hover {
     background: #009acd;
     transform: scale(1.1);
 }
+
 /* Slideshow Container */
 .slideshow-container {
     position: relative;
@@ -97,21 +134,25 @@ button {
 
 @media (max-width: 768px) {
     .slide img {
-        width: 100%; /* Full width on smaller screens */
+        width: 100%;
+        /* Full width on smaller screens */
     }
 
     .thumbnail-gallery img {
-        width: 25%; /* Larger thumbnails for smaller screens */
+        width: 25%;
+        /* Larger thumbnails for smaller screens */
     }
 }
 
 @media (max-width: 480px) {
     .slide img {
-        width: 100%; /* Ensure it still fills the container */
+        width: 100%;
+        /* Ensure it still fills the container */
     }
 
     .thumbnail-gallery img {
-        width: 30%; /* Adjust thumbnail size further for very small screens */
+        width: 30%;
+        /* Adjust thumbnail size further for very small screens */
     }
 }
 
@@ -128,7 +169,8 @@ button {
 }
 
 /* Next/Prev Controls */
-.prev, .next {
+.prev,
+.next {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -144,7 +186,8 @@ button {
     transition: background-color 0.3s;
 }
 
-.prev:hover, .next:hover {
+.prev:hover,
+.next:hover {
     background: rgba(0, 0, 0, 0.8);
 }
 
@@ -179,6 +222,9 @@ button {
     border-color: #00bfff;
 }
 
+<<<<<<< HEAD
+/* ... (rest of your styles.css) ... */
+=======
 .flash-messages {
     margin: 20px 0;
     text-align: center;
@@ -373,4 +419,10 @@ pre {
 .cashapp img:hover {
   transition: transform 0.3s;
   transform: scale(1.5);
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> ac1891f358f558d9df89caa3302de6c4620f5740
+>>>>>>> c3cf9d90040183913978a78eb5f129961e9922db

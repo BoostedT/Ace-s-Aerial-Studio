@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 
 app = Flask(__name__)
-app.secret_key = "123"
+app.secret_key = "Ganjaking420"  # In a production app, use a strong, randomly generated secret key
 
 @app.route('/')
 def home():
@@ -98,14 +98,24 @@ def submissions():
 def map():
     return render_template('map.html')
 
-@app.route('/signup', methods=['GET', 'POST'])
+@app.route('/signup', methods=['GET', 'POST'])  # New signup route
 def signup():
     if request.method == 'POST':
+        # 1. Get data from the signup form
         username = request.form['username']
         password = request.form['password']
-        flash("Successfully created account!", "success")
-        return redirect('submissions')
-    return render_template('signup.html')
+        # ... other user data ...
+
+        # 2. Validate the data (add your validation logic here)
+        # ...
+
+        # 3. If data is valid, create a new user account
+        # ... (This will usually involve storing the user data in a database)
+
+        flash("Sign up successful!", "success")
+        return redirect(url_for('login'))  # Redirect to login after signup
+
+    return render_template('signup.html')  # Render the signup form
 
 if __name__ == '__main__':
     app.run(debug=True)

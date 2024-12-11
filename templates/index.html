@@ -3,25 +3,19 @@
 {% block content %}
 <h1>Experience the World from Above</h1>
 <p>
-    Stunning aerial photography and videography that brings your vision to life. 
+    Stunning aerial photography and videography that brings your vision to life.
     At Ace's Aerial Studios, our professional drone pilots capture breathtaking moments like never before.
 </p>
 <a href="{{ url_for('portfolio') }}" class="btn">View Portfolio</a>
 <a href="{{ url_for('about') }}" class="btn">Learn More</a>
 
 <div class="gallery">
-    <div class="image-container">
-      <img src="{{ url_for('static', filename='images/oneokfield.jpg') }}" alt="Drillers Stadium">
-      <div class="overlay">Drillers Stadium</div>
-    </div>
-    <div class="image-container">
-      <img src="{{ url_for('static', filename='images/downtownwithsunset.jpg') }}" alt="Bok Center Dusk">
-      <div class="overlay">BOK Center Dusk</div>
-    </div>
-    <div class="image-container">
-      <img src="{{ url_for('static', filename='images/darktulsa.jpg') }}" alt="Downtown Tulsa at Night">
-      <div class="overlay">Downtown Tulsa at Night</div>
-    </div>
+    <div class="image-container"> 
+        <img src="{{ url_for('static', filename='images/oneokfield.jpg') }}" alt="Drillers Stadium">
+        <div class="overlay">Drillers Stadium</div> 
+    </div> 
+    <img src="{{ url_for('static', filename='images/downtownwithsunset.jpg') }}" alt="Bok Center Dusk">
+    <img src="{{ url_for('static', filename='images/darktulsa.jpg') }}" alt="Downtown Tulsa at Night">
 </div>
 
 <a href="https://www.instagram.com/anthon10999" class="instagram">

@@ -6,7 +6,7 @@
     <title>{% block title %}Ace's Aerial Studio{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/overlay.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}"> 
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logo.png') }}">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /> 
@@ -15,12 +15,16 @@
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> 
 </head>
 <body>
-    <header class="site-header">
+    <header class="site-header"> 
         <div class="container">
             <div class="logo">
+<<<<<<< HEAD
                 <img src="static/images/darklogo.png">
+=======
+                <h1>Ace's Aerial Studio</h1> 
+>>>>>>> c3cf9d90040183913978a78eb5f129961e9922db
             </div>
-            <nav class="nav-links">
+            <nav class="nav-links"> 
                 <ul>
                     <li><a href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="{{ url_for('portfolio') }}">Portfolio</a></li>
@@ -28,8 +32,8 @@
                     <li><a href="{{ url_for('contact') }}">Contact</a></li>
                     <li><a href="{{ url_for('submissions') }}">Submissions</a></li>
                     <li><a href="{{ url_for('map') }}">Map</a></li>
-                    <li><a href="{{ url_for('login') }}">Login</a></li>
-                    <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li> 
+                    <li><a href="{{ url_for('signup') }}">Sign Up</a></li> 
                 </ul>
             </nav>
         </div>
