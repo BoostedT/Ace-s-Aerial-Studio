@@ -221,4 +221,203 @@ button {
     border-color: #00bfff;
 }
 
+<<<<<<< HEAD
 /* ... (rest of your styles.css) ... */
+=======
+.flash-messages {
+    margin: 20px 0;
+    text-align: center;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #000000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+.alert {
+    padding: 15px;
+    margin: 10px auto;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.alert.success {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.alert.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+/* Align login/logout button to the right */
+nav ul li.login-button {
+    margin-left: auto; /* Push the button to the far right */
+}
+
+nav ul li.login-button a {
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 15px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+nav ul li.login-button a:hover {
+    background-color: #0056b3;
+}
+
+pre {
+  font-family: Montserrat-Regular;
+  line-height: 10px;
+}
+
+.contact {
+  margin-right: 10px;
+}
+
+.create {
+  background-color: #14c600;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.create:hover {
+  background-color: #0f9401;
+}
+
+.view {
+  background-color: #c7ce00;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.view:hover {
+  background-color: #979c00;
+  transition: background-color 0.3s color 0.3s;
+}
+
+.quote-redirect {
+  color: white;
+  background-color: #007bff;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.quote-redirect:hover {
+  color: white;
+  background-color: #0056b3;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.submit {
+  margin-top: 15px;
+}
+
+.facebook img {
+  width: 40px;
+  height: 40px;
+  top: 520px;
+  position: relative;
+}
+
+.facebook-contact img {
+  position: relative;
+  top: 500px;
+}
+
+.instagram img {
+  width: 40px;
+  height: 30px;
+  top: 515px;
+  position: relative;
+}
+
+.tiktok img {
+  width: 23px;
+  height: 28px;
+  margin-bottom: 4px;
+  margin-left: 5px;
+  position: relative;
+  top: 518px;
+}
+
+.x img {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  top: 515px;
+  margin-left: 8px;
+}
+
+.cashapp img {
+  width: 35px;
+  height: 35px;
+  position: relative;
+  top: 518px;
+  margin-left: 5px;
+}
+
+.facebook img:hover {
+  transition: transform 0.3s;
+  transform: scale(1.5);
+}
+
+.instagram img:hover {
+  transition: transform 0.3s;
+  transform: scale(1.5);
+}
+
+.tiktok img:hover {
+  transition: transform 0.3s;
+  transform: scale(1.5);
+}
+
+.x img:hover {
+  transition: transform 0.3s;
+  transform: scale(1.5);
+}
+
+.cashapp img:hover {
+  transition: transform 0.3s;
+  transform: scale(1.5);
+}
+
+>>>>>>> ac1891f358f558d9df89caa3302de6c4620f5740
