@@ -1,74 +1,128 @@
 {% extends "base.html" %}
 {% block title %}Interactive Map{% endblock %}
 {% block content %}
-<h1>Interactive Map</h1>
-<h2>Below, some of the previous locations where our services have been provided.</h2>
 <div id="map" style="height: 400px;"></div>
+
 <script>
-    // Initialize the map
-    var map = L.map('map').setView([37.0902, -95.7129], 4); // Centered on the US
+    function initMap() {
+        // Initialize the map
+        const map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 37.0902, lng: -95.7129},
+            zoom: 4,
+            mapTypeControl: false
+        });
 
-    // Add the tile layer (you can choose different styles)
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+        const infowindow = new google.maps.InfoWindow();
+        const searchBox = new google.maps.places.SearchBox(document.getElementById('search-input'));
 
-    // Sample photo data (replace with your actual data)
-    var photoData = [
-        {
-            "lat": 36.1540,
-            "lng": -95.9928,
-            "img": "{{ url_for('static', filename='images/Tulsa.jpg') }}",
-            "caption": "Downtown Tulsa, Oklahoma"
-        },
-        {
-            "lat": 40.7128, 
-            "lng": -74.0060, 
-            "img": "{{ url_for('static', filename='images/drone2.jpg') }}",
-            "caption": "Urban Skylines"
-        },
-        {
-            "lat": 37.8199,
-            "lng": -122.4786,
-            "img": "{{ url_for('static', filename='images/california.jpg') }}",
-            "caption": "Golden Gate Bridge"
-        },
-        {
-            "lat": 25.7617,
-            "lng": -80.1918,
-            "img": "{{ url_for('static', filename='images/miami.jpg') }}",
-            "caption": "Miami, Florida"
-        },
-        {
-            "lat": 40.7608,
-            "lng": -111.8910,
-            "img": "{{ url_for('static', filename='images/utah.jpg') }}",
-            "caption": "Salt Lake City, Utah"
-        },
-        {
-            "lat":45.5019,
-            "lng": -73.5674,
-            "img": "{{ url_for('static', filename='images/montreal.jpg') }}",
-            "caption": "Montreal, Quebec"
-        }
-    ];
+        // Sample photo data with image URLs and captions
+        var photoData = [
+            {
+                "lat": 36.1540,
+                "lng": -95.9928,
+                "img": "{{ url_for('static', filename='images/Tulsa.jpg') }}",
+                "caption": "Downtown Tulsa, Oklahoma"
+            },
+            {
+                "lat": 40.7128,
+                "lng": -74.0060,
+                "img": "{{ url_for('static', filename='images/drone2.jpg') }}",
+                "caption": "Urban Skylines"
+            },
+            // ... more photo data
+        ];
 
-    // Add markers for each photo
-    photoData.forEach(function(photo) {
-        var marker = L.marker([photo.lat, photo.lng]).addTo(map);
-        marker.bindPopup('<img src="' + photo.img + '" width="200px"><br>' + photo.caption);
-    });
+        photoData.forEach(function (photo) {
+            const marker = new google.maps.Marker({
+                position: {lat: photo.lat, lng: photo.lng},
+                map: map,
+            });
+
+            // Create the content for the infowindow with image and caption
+            const contentString =
+                '<div id="content">' +
+                '<img src="' + photo.img + '" style="width:200px;">' +
+                '<p>' + photo.caption + '</p>' +
+                '</div>';
+
+            marker.addListener("click", () => {
+                infowindow.setContent(contentString);
+                infowindow.open({
+                    anchor: marker,
+                    map,
+                });
+            });
+        });
+
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener("bounds_changed", () => {
+            searchBox.setBounds(map.getBounds());
+        });
+
+        let markers = [];
+
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener("places_changed", () => {
+            const places = searchBox.getPlaces();
+
+            if (places.length == 0) {
+                return;
+            }
+
+            // Clear out the old markers.
+            markers.forEach((marker) => {
+                marker.setMap(null);
+            });
+            markers = [];
+
+            // For each place, get the icon, name and location.
+            const bounds = new google.maps.LatLngBounds();
+
+            places.forEach((place) => {
+                if (!place.geometry || !place.geometry.location) {
+                    console.log("Returned place contains no geometry");
+                    return;
+                }
+
+                const icon = {
+                    url: place.icon,
+                    size: new google.maps.Size(71, 71),
+                    origin: new google.maps.Point(0, 0),
+                    anchor: new google.maps.Point(17, 34),
+                    scaledSize: new google.maps.Size(25, 25),
+                };
+
+                // Create a marker for each place.
+                markers.push(
+                    new google.maps.Marker({
+                        map,
+                        icon,
+                        title: place.name,
+                        position: place.geometry.location,
+                    })
+                );
+                if (place.geometry.viewport) {
+                    // Only geocodes have viewport.
+                    bounds.union(place.geometry.viewport);
+                } else {
+                    bounds.extend(place.geometry.location);
+                }
+            });
+            map.fitBounds(bounds);
+        });
+    }
 </script>
-<a href="https://www.facebook.com/zack6yuan" class="facebook">
-  <img src="static/images/facebook.png">
+
+<input type="text" id="search-input" placeholder="Enter a location">
+
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjBTq6NBHlDQ9K76t3LpecOKCVE_2FF0U&libraries=places&callback=initMap"
+    async defer></script>
+
+<a href="https://www.facebook.com/your_facebook_page" class="facebook"> <img src="static/images/facebook.png"> </a>
+<a href="https://www.instagram.com/your_instagram_profile" class="instagram"> <img src="static/images/instagram.png">
 </a>
-<a href="https://www.instagram.com/anthon10999" class="instagram">
-  <img src="static/images/instagram.png">
-</a>
-<a href="https://www.tiktok.com" class="tiktok">
-  <img src="static/images/tiktok.png">
-</a>
-<a href="https://www.x.com/Lilacedronieman" class="x">
-  <img src="static/images/x.png"
-</a>
+<a href="https://www.tiktok.com/your_tiktok_profile" class="tiktok"> <img src="static/images/tiktok.png"> </a>
+<a href="https://www.x.com/your_x_profile" class="x"> <img src="static/images/x.png"> </a>
 {% endblock %}
