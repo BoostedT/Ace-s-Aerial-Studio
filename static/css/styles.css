@@ -312,6 +312,11 @@ pre {
   position: relative;
 }
 
+.facebook-contact img {
+  position: relative;
+  top: 500px;
+}
+
 .instagram img {
   width: 40px;
   height: 30px;
