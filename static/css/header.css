@@ -10,10 +10,10 @@ body, h1, ul, li, a {
 
 /* Header Styles */
 .site-header {
+    position: sticky;
     background-color: #00000000; /* Transparent BG */
     color: white;
     padding: 20px 0;
-    position: sticky;
     top: 0;
     z-index: 1000;
 }
