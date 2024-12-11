@@ -355,8 +355,9 @@ pre {
 .facebook img {
   width: 40px;
   height: 40px;
-  top: 490px;
+  top: 726px;
   position: relative;
+  margin-left: 3px;
 }
 
 .facebook-contact img {
@@ -367,7 +368,7 @@ pre {
 .instagram img {
   width: 40px;
   height: 30px;
-  top: 486px;
+  top: 720px;
   position: relative;
 }
 
@@ -377,14 +378,14 @@ pre {
   margin-bottom: 4px;
   margin-left: 5px;
   position: relative;
-  top: 489px;
+  top: 721px;
 }
 
 .x img {
   width: 28px;
   height: 28px;
   position: relative;
-  top: 486px;
+  top: 720px;
   margin-left: 8px;
 }
 
@@ -392,8 +393,8 @@ pre {
   width: 35px;
   height: 35px;
   position: relative;
-  top: 489px;
-  margin-left: 5px;
+  top: 723px;
+  margin-left: 2px;
 }
 
 .facebook img:hover {
