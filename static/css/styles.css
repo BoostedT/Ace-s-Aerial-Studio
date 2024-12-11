@@ -89,9 +89,9 @@ footer {
     background: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 0px;
-    position: relative; /* Removed fixed 'top' property */
-    bottom: 0;
+    position: absolute; /* Removed fixed 'top' property */
     width: 100%;
+    bottom: -192px;
 }
 
 /* Button Styles */
