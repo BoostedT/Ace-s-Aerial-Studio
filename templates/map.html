@@ -2,6 +2,7 @@
 {% block title %}Interactive Map{% endblock %}
 {% block content %}
 <h1>Interactive Map</h1>
+<p>Below, some of the locations where out services have been provided.</p>
 <div id="map" style="height: 400px;"></div>
 <script>
     function initMap() {
@@ -17,20 +18,37 @@
 
         // Sample photo data with image URLs and captions
         var photoData = [
-            {
-                "lat": 36.1540,
-                "lng": -95.9928,
-                "img": "{{ url_for('static', filename='images/Tulsa.jpg') }}",
-                "caption": "Downtown Tulsa, Oklahoma"
-            },
-            {
-                "lat": 40.7128,
-                "lng": -74.0060,
-                "img": "{{ url_for('static', filename='images/drone2.jpg') }}",
-                "caption": "Urban Skylines"
-            },
-            // ... more photo data
-        ];
+        {
+            "lat": 36.1540,
+            "lng": -95.9928,
+            "img": "{{ url_for('static', filename='images/Tulsa.jpg') }}",
+            "caption": "Downtown Tulsa, Oklahoma"
+        },
+        {
+            "lat": 40.7128, 
+            "lng": -74.0060, 
+            "img": "{{ url_for('static', filename='images/drone2.jpg') }}",
+            "caption": "Urban Skylines"
+        },
+        {
+            "lat": 37.8199,
+            "lng": -122.4786,
+            "img": "{{ url_for('static', filename='images/california.jpg') }}",
+            "caption": "Golden Gate Bridge"
+        },
+        {
+            "lat": 25.7617,
+            "lng": -80.1918,
+            "img": "{{ url_for('static', filename='images/miami.jpg') }}",
+            "caption": "Miami, Florida"
+        },
+        {
+            "lat": 40.7608,
+            "lng": -111.8910,
+            "img": "{{ url_for('static', filename='images/utah.jpg') }}",
+            "caption": "Salt Lake City, Utah"
+        }
+    ];
 
         photoData.forEach(function (photo) {
             const marker = new google.maps.Marker({

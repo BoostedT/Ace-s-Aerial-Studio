@@ -3,20 +3,11 @@
 {% block content %}
 <h1>Sign Up</h1>
 <form method="post">
-<<<<<<< HEAD
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" required>
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required>
     <button type="submit">Sign Up</button> </form>
-=======
-  <label for="username">Username:</label>
-  <input type="text" id="username" name="username" required>
-  <label for="password">Password:</label>
-  <input type="password" id="password" name="password" required>
-  <button type="submit">Login</button>
-</form>
->>>>>>> ac1891f358f558d9df89caa3302de6c4620f5740
 {% with messages = get_flashed_messages(with_categories=true) %}
 {% if messages %}
 <div class="flash-messages">
