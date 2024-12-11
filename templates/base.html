@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Ace's Aerial Studio{% endblock %}</title>
+    <title>{% block title %}Ace's Aerial Studios{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/overlay.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}"> 
@@ -14,15 +14,11 @@
     <script src="{{ url_for('static', filename='js/slideshow.js') }}"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> 
 </head>
-<body>
+<body style="background-image: url('static/images/darktulsa.jpg');" class="bg">
     <header class="site-header"> 
         <div class="container">
             <div class="logo">
-<<<<<<< HEAD
                 <img src="static/images/darklogo.png">
-=======
-                <h1>Ace's Aerial Studio</h1> 
->>>>>>> c3cf9d90040183913978a78eb5f129961e9922db
             </div>
             <nav class="nav-links"> 
                 <ul>
