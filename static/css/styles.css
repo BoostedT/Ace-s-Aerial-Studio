@@ -6,8 +6,8 @@ body {
     margin: 0;
     padding: 0;
     color: #fff;
-    background-image: url("{{ url_for('static', filename='images/aces-studio-background.jpg') }}");
-    background-size: cover;
+    background-image: url("{{ url_for('static', filename='images/darktulsa.jpg') }}");
+    background-size: center;
     background-repeat: no-repeat;
 }
 
@@ -355,7 +355,7 @@ pre {
 .facebook img {
   width: 40px;
   height: 40px;
-  top: 520px;
+  top: 490px;
   position: relative;
 }
 
@@ -367,7 +367,7 @@ pre {
 .instagram img {
   width: 40px;
   height: 30px;
-  top: 515px;
+  top: 486px;
   position: relative;
 }
 
@@ -377,14 +377,14 @@ pre {
   margin-bottom: 4px;
   margin-left: 5px;
   position: relative;
-  top: 518px;
+  top: 489px;
 }
 
 .x img {
   width: 28px;
   height: 28px;
   position: relative;
-  top: 515px;
+  top: 486px;
   margin-left: 8px;
 }
 
@@ -392,7 +392,7 @@ pre {
   width: 35px;
   height: 35px;
   position: relative;
-  top: 518px;
+  top: 489px;
   margin-left: 5px;
 }
 
