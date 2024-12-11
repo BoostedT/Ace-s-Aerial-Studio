@@ -66,3 +66,9 @@ body, h1, ul, li, a {
         gap: 10px;
     }
 }
+.logo img {
+  display: flex;
+  width: 60px;
+  margin-right: 30px;
+  margin-bottom: 22px;
+}
